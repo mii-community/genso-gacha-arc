@@ -1,0 +1,35 @@
+/* 基本デザイン */
+
+body {
+    color: #191919;
+    font-family: "Yu Gothic Light";
+}
+
+.header {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 48px;
+}
+
+.gacha-buttons {
+    margin: 140px 36% 0 36%;
+}
+
+.gacha-button {
+    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+    margin-top: 48px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid;
+    border-color: #191919;
+    border-radius: 28px;
+    background-color: #fefefe;
+    padding: 8px 8px 8px 8px;
+    user-select: none;
+}
+
+.gacha-button:hover {
+    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+    color: #fefefe;
+    background-color: #191919;
+}
