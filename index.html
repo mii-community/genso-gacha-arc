@@ -11,6 +11,7 @@
     <!-- css / javascript -->
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="/event.js"></script>
+    <script src="/script.js"></script>
 
     <!-- アイコン / タイトル -->
     <link rel="icon" href="/assets/images/image.png">
@@ -41,10 +42,10 @@
 <body>
     <div class="header">元素ガチャ.com</div>
     <div class="gacha-buttons">
-        <div class="gacha-button element-gacha">元素ガチャ</div>
-        <div class="gacha-button air-gacha">空気ガチャ</div>
-        <div class="gacha-button metal-gacha">金属ガチャ</div>
-        <div class="gacha-button rare-gacha">レアアースガチャ</div>
+        <div class="gacha-button element-gacha" onclick="console.log(dropElement(1));">元素ガチャ</div>
+        <div class="gacha-button air-gacha" onclick="console.log(dropAir(1));">空気ガチャ</div>
+        <div class="gacha-button metal-gacha" onclick="console.log(dropMetal(1));">金属ガチャ</div>
+        <div class="gacha-button rare-gacha" onclick="console.log(dropRare(1));">レアアースガチャ</div>
     </div>
     <div class="result-screen">
         ガチャリザルト
