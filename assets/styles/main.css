@@ -33,3 +33,8 @@ body {
     color: #fefefe;
     background-color: #191919;
 }
+
+.result-screen {
+    position: relative;
+    text-align: center;
+}
