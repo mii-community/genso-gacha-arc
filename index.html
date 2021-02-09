@@ -40,15 +40,30 @@
 </head>
 
 <body>
-    <div class="header">元素ガチャ.com</div>
-    <div class="gacha-buttons">
-        <div class="gacha-button element-gacha" onclick="console.log(dropElement(1));">元素ガチャ</div>
-        <div class="gacha-button air-gacha" onclick="console.log(dropAir(1));">空気ガチャ</div>
-        <div class="gacha-button metal-gacha" onclick="console.log(dropMetal(1));">金属ガチャ</div>
-        <div class="gacha-button rare-gacha" onclick="console.log(dropRare(1));">レアアースガチャ</div>
-    </div>
-    <div class="result-screen">
-        ガチャリザルト
-        <div class="result-box"></div>
-    </div>
+    <main>
+
+        <div class="header">元素ガチャ.com</div>
+
+        <div class="gacha-buttons">
+            <div class="gacha-button element-gacha" onclick="openElement();">元素ガチャ</div>
+            <div class="gacha-button air-gacha" onclick="openAir();">空気ガチャ</div>
+            <div class="gacha-button metal-gacha" onclick="openMetal();">金属ガチャ</div>
+            <div class="gacha-button rare-gacha" onclick="openRare();">レアアースガチャ</div>
+        </div>
+
+        <div class="gacha-screens">
+            <div class="element-gacha-screen gacha-screen hide">
+                <p class="gacha-title">元素ガチャ</p>
+            </div>
+            <div class="air-gacha-screen gacha-screen hide">
+                <p class="gacha-title">空気ガチャ</p>
+            </div>
+            <div class="metal-gacha-screen gacha-screen hide">
+                <p class="gacha-title">金属ガチャ</p>
+            </div>
+            <div class="rare-gacha-screen gacha-screen hide">
+                <p class="gacha-title">レアアースガチャ</p>
+            </div>
+        </div>
+    </main>
 </body>
