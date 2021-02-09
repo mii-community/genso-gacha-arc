@@ -72,6 +72,14 @@ body {
     background-color: #191919;
 }
 
+.result-box {
+    padding-bottom: 70%;
+    margin: 16px 16px 16px 16px;
+    border: 1px solid;
+    border-color: #191919;
+    border-radius: 28px;
+}
+
 .hide {
     transform: scale(0);
 }
