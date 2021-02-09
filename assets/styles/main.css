@@ -4,6 +4,7 @@ body {
     color: #191919;
     font-family: "Yu Gothic Light";
     position: relative;
+    height: 100%;
 }
 
 /* クラス別デザイン */
@@ -39,10 +40,10 @@ body {
 
 .gacha-screen {
     position: absolute;
-    left: calc(100% - 50% - 256px);
+    left: calc(100% - 50% - 20%);
     top: 170px;
-    width: 512px;
-    height: 80%;
+    width: 40%;
+    height: 90%;
     text-align: center;
     font-size: 24px;
     border: 1px solid;
@@ -51,6 +52,24 @@ body {
     background-color: #fefefe;
     user-select: none;
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gacha-button-mode {
+    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+    display: inline-flex;
+    padding: 4px 4px 4px 4px;
+    padding-left: 36px;
+    padding-right: 36px;
+    margin: 0 36px 0 36px;
+    border: 1px solid;
+    border-color: #191919;
+    border-radius: 28px;
+}
+
+.gacha-button-mode:hover {
+    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+    color: #fefefe;
+    background-color: #191919;
 }
 
 .hide {
