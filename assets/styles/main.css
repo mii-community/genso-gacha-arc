@@ -7,6 +7,11 @@ body {
     height: 100%;
 }
 
+img {
+    z-index: -1;
+    position: fixed;
+}
+
 /* クラス別デザイン */
 
 .header {
@@ -20,7 +25,7 @@ body {
 }
 
 .gacha-button {
-    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+    transition: color, background-color 0.2s cubic-bezier(0, 0.55, 0.45, 1);
     margin-top: 36px;
     text-align: center;
     font-size: 24px;
@@ -33,12 +38,12 @@ body {
 }
 
 .gacha-button:hover {
-    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
     color: #fefefe;
     background-color: #191919;
 }
 
 .gacha-screen {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: absolute;
     left: calc(100% - 50% - 20%);
     top: 170px;
@@ -51,11 +56,10 @@ body {
     border-radius: 28px;
     background-color: #fefefe;
     user-select: none;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gacha-button-mode {
-    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+    transition: color, background-color 0.2s cubic-bezier(0, 0.55, 0.45, 1);
     display: inline-flex;
     padding: 4px 4px 4px 4px;
     padding-left: 36px;
@@ -67,17 +71,32 @@ body {
 }
 
 .gacha-button-mode:hover {
-    transition: color, background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
     color: #fefefe;
     background-color: #191919;
 }
 
 .result-box {
-    padding-bottom: 70%;
-    margin: 16px 16px 16px 16px;
+    position: relative;
+    height: 60%;
+    margin: 32px ;
     border: 1px solid;
     border-color: #191919;
-    border-radius: 28px;
+    overflow-y: scroll;
+}
+
+.result-item {
+    margin: 4px 4px 4px 4px;
+    padding: 7px 7px 7px 7px;
+    text-align: left;
+    border: 1px solid;
+    border-color: #c0c0c0;
+}
+
+.close-button {
+    position: absolute;
+    right: 0;
+    padding-right: 24px;
+    transform: scale(1.5);
 }
 
 .hide {
