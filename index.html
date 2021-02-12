@@ -41,9 +41,19 @@
 
 <body>
     <main>
-        <img src="/assets/images/entire_nb.png" alt="">
-
         <div class="header">元素ガチャ.com</div>
+
+        <div class="ranking" onclick="openRanking();">ランキング</div>
+
+        <div class="ranking-screen hide">
+            <p class="close-button" onclick="openRanking();">×</p>
+            <p class="ranking-title">ランキング</p>
+            <div class="material-ranking ranking-button-mode">物質</div>
+            <div class="element-ranking ranking-button-mode">元素</div>
+            <div class="result-box">
+
+            </div>
+        </div>
 
         <div class="gacha-buttons">
             <div class="gacha-button element-gacha" onclick="openElement();">元素ガチャ</div>
