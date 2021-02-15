@@ -1,7 +1,7 @@
 /* 基本デザイン */
 
 body {
-    color: #191919;
+    color: #232323;
     font-family: "Yu Gothic Light";
     position: relative;
     height: 100%;
@@ -29,17 +29,17 @@ img {
     text-align: center;
     padding: 8px 8px 8px 8px;
     border: 1px solid;
-    border-color: #191919;
+    border-color: #232323;
     border-radius: 28px;
-    background-color: #fefefe;
+    background-color: #fdfdfd;
     margin-bottom: 36px;
     font-size: 24px;
     user-select: none;
 }
 
 .ranking:hover {
-    color: #fefefe;
-    background-color: #191919;
+    color: #fdfdfd;
+    background-color: #232323;
 }
 
 .ranking-screen {
@@ -55,9 +55,9 @@ img {
     text-align: center;
     font-size: 24px;
     border: 1px solid;
-    border-color: #191919;
+    border-color: #232323;
     border-radius: 28px;
-    background-color: #fefefe;
+    background-color: #fdfdfd;
     user-select: none;
 }
 
@@ -69,13 +69,13 @@ img {
     padding-right: 36px;
     margin: 0 36px 0 36px;
     border: 1px solid;
-    border-color: #191919;
+    border-color: #232323;
     border-radius: 28px;
 }
 
 .ranking-button-mode:hover {
-    color: #fefefe;
-    background-color: #191919;
+    color: #fdfdfd;
+    background-color: #232323;
 }
 
 .gacha-buttons {
@@ -88,7 +88,7 @@ img {
     text-align: center;
     font-size: 24px;
     border: 1px solid;
-    border-color: #191919;
+    border-color: #232323;
     border-radius: 28px;
     background-color: #fefefe;
     padding: 8px 8px 8px 8px;
@@ -96,8 +96,8 @@ img {
 }
 
 .gacha-button:hover {
-    color: #fefefe;
-    background-color: #191919;
+    color: #fdfdfd;
+    background-color: #232323;
 }
 
 .gacha-screen {
@@ -112,9 +112,9 @@ img {
     text-align: center;
     font-size: 24px;
     border: 1px solid;
-    border-color: #191919;
+    border-color: #232323;
     border-radius: 28px;
-    background-color: #fefefe;
+    background-color: #fdfdfd;
     user-select: none;
 }
 
@@ -126,13 +126,13 @@ img {
     padding-right: 36px;
     margin: 0 36px 0 36px;
     border: 1px solid;
-    border-color: #191919;
+    border-color: #232323;
     border-radius: 28px;
 }
 
 .gacha-button-mode:hover {
-    color: #fefefe;
-    background-color: #191919;
+    color: #fdfdfd;
+    background-color: #232323;
 }
 
 .result-box {
@@ -140,7 +140,7 @@ img {
     height: 60%;
     margin: 32px ;
     border: 1px solid;
-    border-color: #191919;
+    border-color: #232323;
     overflow-y: scroll;
 }
 
