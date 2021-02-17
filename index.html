@@ -43,23 +43,10 @@
     <main>
         <div class="header">元素ガチャ.com</div>
 
-        <div class="ranking" onclick="openRanking();">ランキング</div>
-
-        <div class="ranking-screen hide">
-            <p class="close-button" onclick="openRanking();">×</p>
-            <p class="ranking-title">ランキング</p>
-            <div class="material-ranking ranking-button-mode">物質</div>
-            <div class="element-ranking ranking-button-mode">元素</div>
-            <div class="result-box">
-
-            </div>
-        </div>
-
         <div class="gacha-buttons">
             <div class="gacha-button element-gacha" onclick="openElement();">元素ガチャ</div>
             <div class="gacha-button air-gacha" onclick="openAir();">空気ガチャ</div>
-            <div class="gacha-button metal-gacha" onclick="openMetal();">金属ガチャ</div>
-            <div class="gacha-button rare-gacha" onclick="openRare();">レアアースガチャ</div>
+            <div class="gacha-button und-gacha" onclick="openUnd();">未発見元素ガチャ</div>
         </div>
 
         <div class="gacha-screens">
@@ -81,21 +68,12 @@
 
                 </div>
             </div>
-            <div class="metal-gacha-screen gacha-screen hide">
-                <p class="close-button" onclick="openMetal();">×</p>
-                <p class="gacha-title">金属ガチャ</p>
-                <p class="gacha-button-mode" onclick="console.log(dropMetal(1));">単発</p>
-                <p class="gacha-button-mode" onclick="console.log(dropMetal(10));">十連</p>
-                <div class="result-box result-metal">
-
-                </div>
-            </div>
-            <div class="rare-gacha-screen gacha-screen hide">
-                <p class="close-button" onclick="openRare();">×</p>
-                <p class="gacha-title">レアアースガチャ</p>
-                <p class="gacha-button-mode" onclick="console.log(dropRare(1));">単発</p>
-                <p class="gacha-button-mode" onclick="console.log(dropRare(10));">十連</p>
-                <div class="result-box result-rare">
+            <div class="und-gacha-screen gacha-screen hide">
+                <p class="close-button" onclick="openUnd();">×</p>
+                <p class="gacha-title">未発見元素ガチャ</p>
+                <p class="gacha-button-mode" onclick="console.log(dropUnd(1));">単発</p>
+                <p class="gacha-button-mode" onclick="console.log(dropUnd(10));">十連</p>
+                <div class="result-box result-und">
 
                 </div>
             </div>
