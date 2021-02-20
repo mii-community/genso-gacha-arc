@@ -181,7 +181,7 @@ const und_d=[new Element("153","Upt","ウンペントトリウム"),
             new Element("159","Upe","ウンペントエンニウム"),
             new Element("160","Uhn","ウンヘキスニリウム"),
             new Element("161","Uhu","ウンヘキスウニウム"),
-            new Element("Uhb","162","ウンヘキスビウム")]
+            new Element("162","Uhb","ウンヘキスビウム")]
 
 const und_p=[new Element("163","Uht","ウンヘキストリウム"),
             new Element("164","Uhq","ウンヘキスクアジウム"),
