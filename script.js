@@ -194,25 +194,20 @@ const und_s=[new Element("119","Uue","ウンウンエンニウム"),
             new Element("120","Ubn","ウンビニリウム")]
 
 function loopSleep(_loopLimit,_interval, _mainFunc){
-    var loopLimit = _loopLimit;
-    var interval = _interval;
-    var mainFunc = _mainFunc;
-    var i = 0;
-    var loopFunc = function () {
-        var result = mainFunc(i);
-        if (result === false) {
-        return;
-        }
-        i = i + 1;
-        if (i < loopLimit) {
-        setTimeout(loopFunc, interval);
-        }
-    }
+    var loopLimit=_loopLimit;
+    var interval=_interval;
+    var mainFunc=_mainFunc;
+    var i=0;
+    var loopFunc=function(){
+        var result=mainFunc(i);
+        if(result===false){return;}
+        i=i+1;
+        if(i<loopLimit){setTimeout(loopFunc,interval);}}
     loopFunc();
 }
 
 function resetGachaResult(){
-    document.querySelectorAll(".result-item").forEach(e => e.remove());
+    document.querySelectorAll(".result-item").forEach(e=>e.remove());
 }
 
 function openAir(){
@@ -242,7 +237,7 @@ function dropAir(amount){
     loopSleep(amount, 10, () => {
         var n=Math.random()*100;
         var r=new Element();
-        var rank = "";
+        var rank="";
         if(n<0.000001){r=air[9];rank="SSS"}      // 1/10000000
         else if(n<0.000007){r=air[8];rank="SS"} // 7/10000000
         else if(n<0.00005){r=air[7];rank="SS"}  // 1/2000000
@@ -262,7 +257,7 @@ function dropElement(amount){
     loopSleep(amount, 10, () => {
         var n=Math.random()*100;
         var r=new Element();
-        var rank = "";
+        var rank="";
         if(n<0.1){r=randomFromList(rare);rank="S"}       // 1/1000
         else if(n<5){r=randomFromList(metal);rank="R"}   // 1/20
         else if(n<100){r=randomFromList(other);rank="N"} // 1/1
