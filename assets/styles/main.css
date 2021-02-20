@@ -44,15 +44,16 @@ img {
 
 .gacha-screen {
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    position: absolute;
+    position: absolute !important;
     width: 640px;
     top: 35%;
     left: 0;
     right: 0;
     margin: auto;
-    height: 102%;
+    height: 105%;
     text-align: center;
     font-size: 24px;
+    z-index: 1;
     border: 1px solid;
     border-color: #232323;
     border-radius: 28px;
@@ -102,5 +103,7 @@ img {
 }
 
 .hide {
+    position: relative;
     transform: scale(0);
+    z-index: 1;
 }

@@ -10,7 +10,6 @@
 
     <!-- css / javascript -->
     <link rel="stylesheet" href="/assets/styles/main.css">
-    <script src="/event.js"></script>
     <script src="/script.js"></script>
 
     <!-- アイコン / タイトル -->
@@ -43,15 +42,9 @@
     <main>
         <div class="header">元素ガチャ.com</div>
 
-        <div class="gacha-buttons">
-            <div class="gacha-button element-gacha" onclick="openElement();">元素ガチャ</div>
-            <div class="gacha-button und-gacha" onclick="openUnd();">未発見元素ガチャ</div>
-            <div class="gacha-button air-gacha" onclick="openAir();">空気ガチャ</div>
-        </div>
-
         <div class="gacha-screens">
             <div class="element-gacha-screen gacha-screen hide">
-                <p class="close-button" onclick="openElement();">×</p>
+                <p class="close-button" onclick="openElement();resetGachaResult();">×</p>
                 <p class="gacha-title">元素ガチャ</p>
                 <p class="gacha-button-mode" onclick="console.log(dropElement(1));">単発</p>
                 <p class="gacha-button-mode" onclick="console.log(dropElement(10));">十連</p>
@@ -60,7 +53,7 @@
                 </div>
             </div>
             <div class="und-gacha-screen gacha-screen hide">
-                <p class="close-button" onclick="openUnd();">×</p>
+                <p class="close-button" onclick="openUnd();resetGachaResult();">×</p>
                 <p class="gacha-title">未発見元素ガチャ</p>
                 <p class="gacha-button-mode" onclick="console.log(dropUnd(1));">単発</p>
                 <p class="gacha-button-mode" onclick="console.log(dropUnd(10));">十連</p>
@@ -69,7 +62,7 @@
                 </div>
             </div>
             <div class="air-gacha-screen gacha-screen hide">
-                <p class="close-button" onclick="openAir();">×</p>
+                <p class="close-button" onclick="openAir();resetGachaResult();">×</p>
                 <p class="gacha-title">空気ガチャ</p>
                 <p class="gacha-button-mode" onclick="console.log(dropAir(1));">単発</p>
                 <p class="gacha-button-mode" onclick="console.log(dropAir(10));">十連</p>
@@ -77,6 +70,12 @@
 
                 </div>
             </div>
+        </div>
+
+        <div class="gacha-buttons">
+            <div class="gacha-button element-gacha" onclick="openElement();">元素ガチャ</div>
+            <div class="gacha-button und-gacha" onclick="openUnd();">未発見元素ガチャ</div>
+            <div class="gacha-button air-gacha" onclick="openAir();">空気ガチャ</div>
         </div>
     </main>
 </body>

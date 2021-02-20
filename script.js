@@ -25,7 +25,6 @@ function loopSleep(_loopLimit,_interval, _mainFunc){
     var loopFunc = function () {
         var result = mainFunc(i);
         if (result === false) {
-        // break機能
         return;
         }
         i = i + 1;
@@ -34,6 +33,10 @@ function loopSleep(_loopLimit,_interval, _mainFunc){
         }
     }
     loopFunc();
+}
+
+function resetGachaResult(){
+    document.querySelectorAll(".result-item").forEach(e => e.remove());
 }
 
 function openAir(){
@@ -52,27 +55,28 @@ function randomFromList(list){
     return list[Math.floor(Math.random()*list.length)]
 }
 
-// N - ノーマル(30%↑~100%↓)
-// R - レア(0.1%↑~30%↓)
-// S - スーパーレア(0.0001%↑~0.1%↓)
-// SS - ハイパーレア(0.000001%↑~0.0001%↓)
-// SSS - ハイエストレア(0.000001%↓)
+// N - ノーマル(30↑~100↓)
+// R - レア(0.1↑~30↓)
+// S - スーパーレア(0.0001↑~0.1↓)
+// SS - ハイパーレア(0.000001↑~0.0001↓)
+// SSS - ハイエストレア(0.000001↓)
 // ↓...以下 ↑...それを含めない以上
+// 確率はifの値で設定
 
 function dropAir(amount){
     loopSleep(amount, 10, () => {
         var n=Math.random()*100;
         var r=new Element();
-        if(n<0.000001){r=air[9];}
-        else if(n<0.000007){r=air[8];}
-        else if(n<0.00005){r=air[7];}
-        else if(n<0.000114){r=air[6];}
-        else if(n<0.000524){r=air[5];}
-        else if(n<0.001818){r=air[4];}
-        else if(n<0.041){r=air[3];}
-        else if(n<0.934){r=air[2];}
-        else if(n<20.9476){r=air[1];}
-        else if(n<100){r=air[0];}
+        if(n<0.000001){r=air[9];}      // 1/10000000
+        else if(n<0.000007){r=air[8];} // 7/10000000
+        else if(n<0.00005){r=air[7];}  // 1/2000000
+        else if(n<0.000114){r=air[6];} // 57/50000000
+        else if(n<0.000524){r=air[5];} // 131/25000000
+        else if(n<0.001818){r=air[4];} // 909/50000000
+        else if(n<0.041){r=air[3];}    // 41/100000
+        else if(n<0.934){r=air[2];}    // 467/50000
+        else if(n<20.9476){r=air[1];}  // 52369/250000
+        else if(n<100){r=air[0];}      // 1/1
         document.querySelector(".result-air").insertAdjacentHTML("afterbegin", "<div class='result-item result-air-item'></div>");
         document.querySelector(".result-air-item").textContent =  "<" + r.rank + "> " + r.initial + " - " + r.name;
     });
@@ -82,9 +86,9 @@ function dropElement(amount){
     loopSleep(amount, 10, () => {
         var n=Math.random()*100;
         var r=new Element();
-        if(n<0.1){r=randomFromList(rare);}
-        else if(n<5){r=randomFromList(metal);}
-        else if(n<100){r=randomFromList(other);}
+        if(n<0.1){r=randomFromList(rare);}       // 1/1000
+        else if(n<5){r=randomFromList(metal);}   // 1/20
+        else if(n<100){r=randomFromList(other);} // 1/1
         document.querySelector(".result-element").insertAdjacentHTML("afterbegin", "<div class='result-item result-element-item'></div>");
         document.querySelector(".result-element-item").textContent = "<" + r.rank + "> " + "No." + r.number + " " + r.initial + " - " + r.name;
     });
@@ -94,11 +98,11 @@ function dropUnd(amount){
     loopSleep(amount, 10, () => {
         var n=Math.random()*100;
         var r=new Element();
-        if(n<0.01){r=randomFromList(und_s);}
-        else if(n<0.02){r=randomFromList(und_p);}
-        else if(n<40){r=randomFromList(und_d);}
-        else if(n<60){r=randomFromList(und_f);}
-        else if(n<100){r=randomFromList(und_g);}
+        if(n<0.01){r=randomFromList(und_s);}      // 1/10000
+        else if(n<0.02){r=randomFromList(und_p);} // 1/5000
+        else if(n<40){r=randomFromList(und_d);}   // 2/5
+        else if(n<60){r=randomFromList(und_f);}   // 3/5
+        else if(n<100){r=randomFromList(und_g);}  // 1/1
         document.querySelector(".result-und").insertAdjacentHTML("afterbegin", "<div class='result-item result-und-item'></div>");
         document.querySelector(".result-und-item").textContent = "<" + r.rank + "> " + "No." + r.number + " " + r.initial + " - " + r.name;
     });
