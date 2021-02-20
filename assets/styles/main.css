@@ -20,6 +20,53 @@ img {
     font-size: 48px;
 }
 
+.prob-button {
+    transition: color, background-color 0.2s cubic-bezier(0, 0.55, 0.45, 1);
+    position: absolute;
+    font-size: 24px;
+    border: 1px solid;
+    border-color: #232323;
+    border-radius: 28px;
+    background-color: #fefefe;
+    padding: 8px 8px 8px 8px;
+    width: 200px;
+    text-align: center;
+    right: 32px;
+    top: 32px;
+    user-select: none;
+}
+
+.prob-button:hover {
+    color: #fdfdfd;
+    background-color: #232323;
+}
+
+.prob-screen {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: absolute !important;
+    width: 640px;
+    top: 35%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 105%;
+    font-size: 24px;
+    z-index: 2;
+    border: 1px solid;
+    border-color: #232323;
+    border-radius: 28px;
+    background-color: #fdfdfd;
+    user-select: none;
+}
+
+.prob-text {
+    padding-left: 32px;
+}
+
+.gacha-title {
+    text-align: center;
+}
+
 .gacha-buttons {
     margin: 90px 36% 0 36%;
 }
@@ -65,9 +112,9 @@ img {
     transition: color, background-color 0.2s cubic-bezier(0, 0.55, 0.45, 1);
     display: inline-flex;
     padding: 4px 4px 4px 4px;
-    padding-left: 36px;
-    padding-right: 36px;
-    margin: 0 36px 0 36px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 0 24px 0 24px;
     border: 1px solid;
     border-color: #232323;
     border-radius: 28px;
@@ -101,6 +148,8 @@ img {
     padding-right: 24px;
     transform: scale(1.5);
 }
+
+/* Utility */
 
 .hide {
     position: relative;

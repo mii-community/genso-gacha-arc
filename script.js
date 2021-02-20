@@ -206,8 +206,18 @@ function loopSleep(_loopLimit,_interval, _mainFunc){
     loopFunc();
 }
 
-function resetGachaResult(){
-    document.querySelectorAll(".result-item").forEach(e=>e.remove());
+function resetGachaResult(gacha){
+    switch(gacha){
+        case 'air':
+            document.querySelectorAll(".result-air-item").forEach(e=>e.remove());
+            break;
+        case 'element':
+            document.querySelectorAll(".result-element-item").forEach(e=>e.remove());
+            break;
+        case 'und':
+            document.querySelectorAll(".result-und-item").forEach(e=>e.remove());
+            break;
+    }
 }
 
 function openAir(){
@@ -220,6 +230,10 @@ function openElement(){
 
 function openUnd(){
     document.querySelector(".und-gacha-screen").classList.toggle("hide");
+}
+
+function openProb(){
+    document.querySelector(".prob-screen").classList.toggle("hide");
 }
 
 function randomFromList(list){
