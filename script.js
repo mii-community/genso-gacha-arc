@@ -108,13 +108,13 @@ const other=[new Element("1","H","水素"),
             new Element("2","He","ヘリウム"),
             new Element("5","B","ホウ素"),
             new Element("6","C","炭素"),
-            new Element("7","窒素"),
+            new Element("7","N","窒素"),
             new Element("8","O","酸素"),
             new Element("9","F","フッ素"),
             new Element("10","Ne","ネオン"),
             new Element("14","Si","ケイ素"),
             new Element("15","P","リン"),
-            new Element("16","硫黄"),
+            new Element("16","S","硫黄"),
             new Element("17","Cl","塩素"),
             new Element("18","Ar","アルゴン"),
             new Element("32","Ge","ゲルマニウム"),
@@ -234,27 +234,27 @@ function randomFromList(list){
 // ↓...以下 ↑...それを含めない以上
 
 function dropAir(amount){
-    loopSleep(amount, 10, () => {
+    loopSleep(amount,10,()=>{
         var n=Math.random()*100;
         var r=new Element();
         var rank="";
-        if(n<0.000001){r=air[9];rank="SSS"}      // 1/10000000
+        if(n<0.000001){r=air[9];rank="SSS"}     // 1/10000000
         else if(n<0.000007){r=air[8];rank="SS"} // 7/10000000
         else if(n<0.00005){r=air[7];rank="SS"}  // 1/2000000
-        else if(n<0.000114){r=air[6];rank="S"} // 57/50000000
-        else if(n<0.000524){r=air[5];rank="S"} // 131/25000000
-        else if(n<0.001818){r=air[4];rank="S"} // 909/50000000
-        else if(n<0.041){r=air[3];rank="S"}    // 41/100000
-        else if(n<0.934){r=air[2];rank="R"}    // 467/50000
-        else if(n<20.9476){r=air[1];rank="R"}  // 52369/250000
-        else if(n<100){r=air[0];rank="N"}      // 1/1
+        else if(n<0.000114){r=air[6];rank="S"}  // 57/50000000
+        else if(n<0.000524){r=air[5];rank="S"}  // 131/25000000
+        else if(n<0.001818){r=air[4];rank="S"}  // 909/50000000
+        else if(n<0.041){r=air[3];rank="S"}     // 41/100000
+        else if(n<0.934){r=air[2];rank="R"}     // 467/50000
+        else if(n<20.9476){r=air[1];rank="R"}   // 52369/250000
+        else if(n<100){r=air[0];rank="N"}       // 1/1
         document.querySelector(".result-air").insertAdjacentHTML("afterbegin","<div class='result-item result-air-item'></div>");
         document.querySelector(".result-air-item").textContent="<"+rank+"> "+r.initial+" - "+r.name;
     });
 };
 
 function dropElement(amount){
-    loopSleep(amount, 10, () => {
+    loopSleep(amount,10,()=>{
         var n=Math.random()*100;
         var r=new Element();
         var rank="";
@@ -267,7 +267,7 @@ function dropElement(amount){
 }
 
 function dropUnd(amount){
-    loopSleep(amount, 10, () => {
+    loopSleep(amount,10,()=>{
         var n=Math.random()*100;
         var r=new Element();
         var rank="";
