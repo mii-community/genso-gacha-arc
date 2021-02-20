@@ -6,7 +6,7 @@ class Element {
     }
 }
 
-const   air=[new Element("","N₂","窒素"),
+const air=[new Element("","N₂","窒素"),
             new Element("","O₂","酸素"),
             new Element("","Ar","アルゴン"),
             new Element("","CO₂","二酸化炭素"),
@@ -73,7 +73,7 @@ const metal=[new Element("3","Li","リチウム"),
             new Element("112","Cn","コペルニシウム"),
             new Element("114","Fl","フレロビウム")];
 
-const  rare=[new Element("57","La","ランタン"),
+const rare=[new Element("57","La","ランタン"),
             new Element("58","Ce","セシウム"),
             new Element("59","Pr","プラセオジム"),
             new Element("60","Nd","ネオジム"),
