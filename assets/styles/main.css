@@ -46,7 +46,7 @@ img {
 }
 
 .screen {
-    transition: transform 0.7s cubic-bezier(0.85, 0, 0.15, 1);
+    transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
     position: absolute !important;
     width: 640px;
     top: 35%;
@@ -141,6 +141,6 @@ img {
 
 .hide {
     position: relative;
-    transform: translateY(-200%);
+    transform: translateY(-140%);
     z-index: 1;
 }
