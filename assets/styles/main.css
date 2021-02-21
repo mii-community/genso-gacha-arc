@@ -66,6 +66,7 @@ img {
 
 .prob-text {
     padding-left: 32px;
+    user-select:text;
 }
 
 .gacha-title {
