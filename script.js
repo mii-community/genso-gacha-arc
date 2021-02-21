@@ -221,19 +221,19 @@ function resetGachaResult(gacha){
 }
 
 function openAir(){
-    document.querySelector(".air-gacha-screen").classList.toggle("hide");
+    document.querySelector(".air").classList.toggle("hide");
 }
 
 function openElement(){
-    document.querySelector(".element-gacha-screen").classList.toggle("hide");
+    document.querySelector(".element").classList.toggle("hide");
 }
 
 function openUnd(){
-    document.querySelector(".und-gacha-screen").classList.toggle("hide");
+    document.querySelector(".und").classList.toggle("hide");
 }
 
 function openProb(){
-    document.querySelector(".prob-screen").classList.toggle("hide");
+    document.querySelector(".prob").classList.toggle("hide");
 }
 
 function randomFromList(list){
