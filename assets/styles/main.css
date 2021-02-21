@@ -20,6 +20,10 @@ img {
     font-size: 48px;
 }
 
+.prob {
+    z-index: 2 !important;
+}
+
 .prob-button {
     transition: color, background-color 0.2s cubic-bezier(0, 0.55, 0.45, 1);
     position: absolute;
@@ -29,10 +33,10 @@ img {
     border-radius: 28px;
     background-color: #fefefe;
     padding: 8px 8px 8px 8px;
-    width: 200px;
+    width: 20%;
     text-align: center;
-    right: 32px;
-    top: 32px;
+    right: 3%;
+    top: 3%;
     user-select: none;
 }
 
@@ -41,21 +45,22 @@ img {
     background-color: #232323;
 }
 
-.prob-screen {
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+.screen {
+    transition: transform 0.7s cubic-bezier(0.85, 0, 0.15, 1);
     position: absolute !important;
     width: 640px;
     top: 35%;
     left: 0;
     right: 0;
     margin: auto;
-    height: 105%;
+    height: 108%;
+    text-align: center;
     font-size: 24px;
-    z-index: 2;
+    z-index: 1;
     border: 1px solid;
     border-color: #232323;
     border-radius: 28px;
-    background-color: #fdfdfd;
+    background-color: #fefefe;
     user-select: none;
 }
 
@@ -89,25 +94,6 @@ img {
     background-color: #232323;
 }
 
-.gacha-screen {
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    position: absolute !important;
-    width: 640px;
-    top: 35%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 105%;
-    text-align: center;
-    font-size: 24px;
-    z-index: 1;
-    border: 1px solid;
-    border-color: #232323;
-    border-radius: 28px;
-    background-color: #fdfdfd;
-    user-select: none;
-}
-
 .gacha-button-mode {
     transition: color, background-color 0.2s cubic-bezier(0, 0.55, 0.45, 1);
     display: inline-flex;
@@ -115,6 +101,7 @@ img {
     padding-left: 32px;
     padding-right: 32px;
     margin: 0 24px 0 24px;
+    font-size: 22px;
     border: 1px solid;
     border-color: #232323;
     border-radius: 28px;
@@ -136,10 +123,11 @@ img {
 
 .result-item {
     margin: 4px 4px 4px 4px;
-    padding: 7px 7px 7px 7px;
+    padding: 5px 5px 5px 5px;
     text-align: left;
+    font-size: 22px;
     border: 1px solid;
-    border-color: #c0c0c0;
+    border-color: #e0e0e0;
 }
 
 .close-button {
@@ -153,6 +141,6 @@ img {
 
 .hide {
     position: relative;
-    transform: scale(0);
+    transform: translateY(-200%);
     z-index: 1;
 }
