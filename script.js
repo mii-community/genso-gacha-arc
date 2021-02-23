@@ -17,12 +17,9 @@ const   air=[new Element("","N₂","窒素"),
             new Element("","O₃","オゾン"),
             new Element("","I₂","ヨウ素")];
 
-const metal=[new Element("3","Li","リチウム"),
-            new Element("4","Be","ベリリウム"),
-            new Element("11","Na","ナトリウム"),
+const metal=[new Element("4","Be","ベリリウム"),
             new Element("12","Mg","マグネシウム"),
             new Element("13","Al","アルミニウム"),
-            new Element("19","K","カリウム"),
             new Element("20","Ca","カルシウム"),
             new Element("21","Sc","スカンジウム"),
             new Element("22","Ti","チタン"),
@@ -35,7 +32,6 @@ const metal=[new Element("3","Li","リチウム"),
             new Element("29","Cu","銅"),
             new Element("30","Zn","亜鉛"),
             new Element("31","Ga","ガリウム"),
-            new Element("37","Rb","ルビジウム"),
             new Element("38","Sr","ストロンチウム"),
             new Element("39","Y","イットリウム"),
             new Element("40","Zr","ジルコニウム"),
@@ -49,7 +45,6 @@ const metal=[new Element("3","Li","リチウム"),
             new Element("48","Cd","カドミウム"),
             new Element("49","In","インジウム"),
             new Element("50","Sn","錫"),
-            new Element("55","Cs","セシウム"),
             new Element("56","Ba","バリウム"),
             new Element("72","Hf","ハフニウム"),
             new Element("73","Ta","タンタル"),
@@ -63,7 +58,6 @@ const metal=[new Element("3","Li","リチウム"),
             new Element("81","Tl","タリウム"),
             new Element("82","Pb","鉛"),
             new Element("83","Bi","ビスマス"),
-            new Element("87","Fr","フランシウム"),
             new Element("88","Ra","ラジウム"),
             new Element("104","Rf","ラザホージウム"),
             new Element("105","Db","ドブニウム"),
@@ -72,6 +66,14 @@ const metal=[new Element("3","Li","リチウム"),
             new Element("108","Hs","ハッシウム"),
             new Element("112","Cn","コペルニシウム"),
             new Element("114","Fl","フレロビウム")];
+
+const alkal=[new Element("3","Li","リチウム"),
+            new Element("11","Na","ナトリウム"),
+            new Element("19","K","カリウム"),
+            new Element("37","Rb","ルビジウム"),
+            new Element("55","Cs","セシウム"),
+            new Element("87","Fr","フランシウム"),
+]
 
 const  rare=[new Element("57","La","ランタン"),
             new Element("58","Ce","セシウム"),
@@ -241,28 +243,21 @@ function randomFromList(list){
     return list[Math.floor(Math.random()*list.length)]
 }
 
-// N - ノーマル(30↑~100↓)
-// R - レア(0.1↑~30↓)
-// S - スーパーレア(0.0001↑~0.1↓)
-// SS - ハイパーレア(0.000001↑~0.0001↓)
-// SSS - ハイエストレア(0.000001↓)
-// ↓...以下 ↑...それを含めない以上
-
 function dropAir(amount){
     loopSleep(amount,10,()=>{
         var n=Math.random()*100;
         var r=new Element();
         var rank="";
-        if(n<0.000001){r=air[9];rank="SSS"}     // 1/10000000
-        else if(n<0.000007){r=air[8];rank="SS"} // 7/10000000
-        else if(n<0.00005){r=air[7];rank="SS"}  // 1/2000000
-        else if(n<0.000114){r=air[6];rank="S"}  // 57/50000000
-        else if(n<0.000524){r=air[5];rank="S"}  // 131/25000000
-        else if(n<0.001818){r=air[4];rank="S"}  // 909/50000000
-        else if(n<0.041){r=air[3];rank="S"}     // 41/100000
-        else if(n<0.934){r=air[2];rank="B"}     // 467/50000
-        else if(n<20.9476){r=air[1];rank="C"}   // 52369/250000
-        else if(n<100){r=air[0];rank="D"}       // 1/1
+        if(n<0.000001){r=air[9];rank="SSS"}
+        else if(n<0.000007){r=air[8];rank="SS"}
+        else if(n<0.00005){r=air[7];rank="SS"}
+        else if(n<0.000114){r=air[6];rank="S"}
+        else if(n<0.000524){r=air[5];rank="S"}
+        else if(n<0.001818){r=air[4];rank="S"}
+        else if(n<0.041){r=air[3];rank="S"}
+        else if(n<0.934){r=air[2];rank="B"}
+        else if(n<20.9476){r=air[1];rank="C"}
+        else if(n<100){r=air[0];rank="D"}
         document.querySelector(".result-air").insertAdjacentHTML("afterbegin","<div class='result-item result-air-item'></div>");
         document.querySelector(".result-air-item").textContent="<"+rank+"> "+r.initial+" - "+r.name;
     });
@@ -273,10 +268,11 @@ function dropElement(amount){
         var n=Math.random()*100;
         var r=new Element();
         var rank="";
-        if(n<0.1){r=randomFromList(rare);rank="S"}       // 1/1000
-        else if(n<1){r=randomFromList(gas);rank="A"}     // 1/100
-        else if(n<5){r=randomFromList(metal);rank="B"}   // 1/20
-        else if(n<100){r=randomFromList(other);rank="D"} // 1/1
+        if(n<0.01){r=randomFromList(rare);rank="SS"}
+        else if(n<0.1){r=randomFromList(gas);rank="S"}
+        else if(n<1){r=randomFromList(alkal);rank="A"}
+        else if(n<5){r=randomFromList(metal);rank="B"}
+        else if(n<100){r=randomFromList(other);rank="D"}
         document.querySelector(".result-element").insertAdjacentHTML("afterbegin","<div class='result-item result-element-item'></div>");
         document.querySelector(".result-element-item").textContent="<"+rank+"> "+"No."+r.number+" "+r.initial+" - "+ r.name;
     });
@@ -287,11 +283,11 @@ function dropUnd(amount){
         var n=Math.random()*100;
         var r=new Element();
         var rank="";
-        if(n<0.0001){r=randomFromList(und_s);rank="SS"}    // 1/1000000
-        else if(n<0.002){r=randomFromList(und_p);rank="S"} // 1/50000
-        else if(n<5){r=randomFromList(und_d);rank="B"}    // 1/5
-        else if(n<40){r=randomFromList(und_f);rank="C"}    // 3/5
-        else if(n<100){r=randomFromList(und_g);rank="D"}   // 1/1
+        if(n<0.0001){r=randomFromList(und_s);rank="SS"}
+        else if(n<0.002){r=randomFromList(und_p);rank="S"}
+        else if(n<5){r=randomFromList(und_d);rank="B"}
+        else if(n<40){r=randomFromList(und_f);rank="C"}
+        else if(n<100){r=randomFromList(und_g);rank="D"}
         document.querySelector(".result-und").insertAdjacentHTML("afterbegin","<div class='result-item result-und-item'></div>");
         document.querySelector(".result-und-item").textContent="<"+rank+"> "+"No."+r.number+" "+r.initial+" - "+ r.name;
     });
