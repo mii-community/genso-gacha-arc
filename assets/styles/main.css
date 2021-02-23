@@ -2,7 +2,7 @@
 
 body {
     color: #232323;
-    font-family: "Yu Gothic Light";
+    font-family: "Yu Gothic Light", ;
     position: relative;
     height: 100%;
 }
@@ -50,7 +50,7 @@ p {
 }
 
 .screen {
-    transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+    transition: all 0.3s cubic-bezier(0.45, 0, 0.55, 1);
     position: absolute !important;
     width: 640px;
     top: 35%;
@@ -146,8 +146,10 @@ p {
 
 .hide {
     position: relative;
-    transform: translateY(-140%);
+    transform: translateY(-10%);
+    opacity: 0;
     z-index: 1;
+    pointer-events: none;
 }
 
 .left-align {
