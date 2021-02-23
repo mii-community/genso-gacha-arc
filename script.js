@@ -6,7 +6,7 @@ class Element {
     }
 }
 
-const air=[new Element("","N₂","窒素"),
+const   air=[new Element("","N₂","窒素"),
             new Element("","O₂","酸素"),
             new Element("","Ar","アルゴン"),
             new Element("","CO₂","二酸化炭素"),
@@ -73,7 +73,7 @@ const metal=[new Element("3","Li","リチウム"),
             new Element("112","Cn","コペルニシウム"),
             new Element("114","Fl","フレロビウム")];
 
-const rare=[new Element("57","La","ランタン"),
+const  rare=[new Element("57","La","ランタン"),
             new Element("58","Ce","セシウム"),
             new Element("59","Pr","プラセオジム"),
             new Element("60","Nd","ネオジム"),
@@ -104,31 +104,32 @@ const rare=[new Element("57","La","ランタン"),
             new Element("102","No","ノーベリウム"),
             new Element("103","Lr","ローレンシウム")];
 
+const   gas=[new Element("2","He","ヘリウム"),
+            new Element("10","Ne","ネオン"),
+            new Element("18","Ar","アルゴン"),
+            new Element("36","Kr","クリプトン"),
+            new Element("54","Xe","キセノン"),
+            new Element("86","Rn","ラドン"),]
+
 const other=[new Element("1","H","水素"),
-            new Element("2","He","ヘリウム"),
             new Element("5","B","ホウ素"),
             new Element("6","C","炭素"),
             new Element("7","N","窒素"),
             new Element("8","O","酸素"),
             new Element("9","F","フッ素"),
-            new Element("10","Ne","ネオン"),
             new Element("14","Si","ケイ素"),
             new Element("15","P","リン"),
             new Element("16","S","硫黄"),
             new Element("17","Cl","塩素"),
-            new Element("18","Ar","アルゴン"),
             new Element("32","Ge","ゲルマニウム"),
             new Element("33","As","ヒ素"),
             new Element("34","Se","セレン"),
             new Element("35","Br","臭素"),
-            new Element("36","Kr","クリプトン"),
             new Element("51","Sb","アンチモン"),
             new Element("52","Te","テルル"),
             new Element("53","I","ヨウ素"),
-            new Element("54","Xe","キセノン"),
             new Element("84","Po","ポロニウム"),
             new Element("85","At","アスタチン"),
-            new Element("86","Rn","ラドン"),
             new Element("109","Mt","マイトネリウム"),
             new Element("110","Ds","ジスプロシウム"),
             new Element("111","Rg","レントゲニウム"),
@@ -259,9 +260,9 @@ function dropAir(amount){
         else if(n<0.000524){r=air[5];rank="S"}  // 131/25000000
         else if(n<0.001818){r=air[4];rank="S"}  // 909/50000000
         else if(n<0.041){r=air[3];rank="S"}     // 41/100000
-        else if(n<0.934){r=air[2];rank="R"}     // 467/50000
-        else if(n<20.9476){r=air[1];rank="R"}   // 52369/250000
-        else if(n<100){r=air[0];rank="N"}       // 1/1
+        else if(n<0.934){r=air[2];rank="B"}     // 467/50000
+        else if(n<20.9476){r=air[1];rank="C"}   // 52369/250000
+        else if(n<100){r=air[0];rank="D"}       // 1/1
         document.querySelector(".result-air").insertAdjacentHTML("afterbegin","<div class='result-item result-air-item'></div>");
         document.querySelector(".result-air-item").textContent="<"+rank+"> "+r.initial+" - "+r.name;
     });
@@ -273,8 +274,9 @@ function dropElement(amount){
         var r=new Element();
         var rank="";
         if(n<0.1){r=randomFromList(rare);rank="S"}       // 1/1000
-        else if(n<5){r=randomFromList(metal);rank="R"}   // 1/20
-        else if(n<100){r=randomFromList(other);rank="N"} // 1/1
+        else if(n<1){r=randomFromList(gas);rank="A"}     // 1/100
+        else if(n<5){r=randomFromList(metal);rank="B"}   // 1/20
+        else if(n<100){r=randomFromList(other);rank="D"} // 1/1
         document.querySelector(".result-element").insertAdjacentHTML("afterbegin","<div class='result-item result-element-item'></div>");
         document.querySelector(".result-element-item").textContent="<"+rank+"> "+"No."+r.number+" "+r.initial+" - "+ r.name;
     });
@@ -287,9 +289,9 @@ function dropUnd(amount){
         var rank="";
         if(n<0.0001){r=randomFromList(und_s);rank="SS"}    // 1/1000000
         else if(n<0.002){r=randomFromList(und_p);rank="S"} // 1/50000
-        else if(n<20){r=randomFromList(und_d);rank="R"}    // 1/5
-        else if(n<60){r=randomFromList(und_f);rank="N"}    // 3/5
-        else if(n<100){r=randomFromList(und_g);rank="N"}   // 1/1
+        else if(n<5){r=randomFromList(und_d);rank="B"}    // 1/5
+        else if(n<40){r=randomFromList(und_f);rank="C"}    // 3/5
+        else if(n<100){r=randomFromList(und_g);rank="D"}   // 1/1
         document.querySelector(".result-und").insertAdjacentHTML("afterbegin","<div class='result-item result-und-item'></div>");
         document.querySelector(".result-und-item").textContent="<"+rank+"> "+"No."+r.number+" "+r.initial+" - "+ r.name;
     });

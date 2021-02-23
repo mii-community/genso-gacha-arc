@@ -12,6 +12,10 @@ img {
     position: fixed;
 }
 
+p {
+    padding-bottom: 0px !important;
+}
+
 /* クラス別デザイン */
 
 .header {
@@ -65,7 +69,7 @@ img {
 }
 
 .prob-text {
-    padding-left: 32px;
+    padding-left: 248px;
     user-select:text;
 }
 
@@ -144,4 +148,8 @@ img {
     position: relative;
     transform: translateY(-140%);
     z-index: 1;
+}
+
+.left-align {
+    text-align: left !important;
 }
