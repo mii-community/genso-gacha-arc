@@ -12,10 +12,6 @@ img {
     position: fixed;
 }
 
-p {
-    padding-bottom: 0px !important;
-}
-
 /* クラス別デザイン */
 
 .header {
@@ -57,7 +53,7 @@ p {
     left: 0;
     right: 0;
     margin: auto;
-    height: 108%;
+    height: 520px;
     text-align: center;
     font-size: 24px;
     z-index: 1;
