@@ -113,6 +113,8 @@ const   gas=[new Element("2","He","ヘリウム"),
             new Element("54","Xe","キセノン"),
             new Element("86","Rn","ラドン"),]
 
+const existence=[new Element("???", "Di", "ジジミウム")]
+
 const other=[new Element("1","H","水素"),
             new Element("5","B","ホウ素"),
             new Element("6","C","炭素"),
@@ -268,6 +270,7 @@ function dropElement(amount){
         var n=Math.random()*100;
         var r=new Element();
         var rank="";
+        if(n<0.000001){r=randomFromList(existence);rank="SSS"}
         if(n<0.01){r=randomFromList(rare);rank="SS"}
         else if(n<0.1){r=randomFromList(gas);rank="S"}
         else if(n<1){r=randomFromList(alkal);rank="A"}
