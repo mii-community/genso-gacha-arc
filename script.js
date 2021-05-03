@@ -237,10 +237,6 @@ function openUnd(){
     document.querySelector(".und").classList.toggle("hide");
 }
 
-function openProb(){
-    document.querySelector(".prob").classList.toggle("hide");
-}
-
 function randomFromList(list){
     return list[Math.floor(Math.random()*list.length)]
 }
